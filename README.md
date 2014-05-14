@@ -7,7 +7,7 @@ This is a reverse engineering of the calls their webapp makes, and so could be u
 
 ### Usage
 
-Because of the authentication method (cookie), I would recommend creating one instance of the Object and continuing to use that in multiple places if needed, to reduce the amount of authentication requests needed per session.
+Because of the authentication method (cookie), I would recommend creating one instance of the object and continuing to use that in multiple places if needed, to reduce the amount of authentication requests needed per session.
 
 ```
 $salesseek = new SalesSeek($email, $password, $url, $client);
