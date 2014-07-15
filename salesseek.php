@@ -188,6 +188,30 @@ class SalesSeek
 		return json_decode($response);
 	}
 
+	/**
+	 * Change the value of a deal
+	 *
+	 * @param string $dealId The deal to update
+	 * @param integer $value The value of the deal
+	 * @param string $bucketId The ID of the bucket this deal is contained in
+	 *
+	 * @return array
+	 */
+
+	public function UpdateDealAmount($dealId = '', $value = 0, $bucketId = '')
+	{
+		if(!($dealId) || $value == 0 || $bucketId == '')
+		{
+			return false;
+		}
+
+		$body["buckets"] = array(array("id" => $bucketId, "value" => $value));
+
+		$response = $this->_doRequest($this->url.'/opportunities/'.$dealId, 'PATCH', json_encode($body));
+
+		return json_decode($response);
+	}
+
 	private function login()
 	{
 		$requestBody = array("email_address" => $this->email, "password" => $this->password);
