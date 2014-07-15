@@ -128,6 +128,9 @@ class SalesSeek
 	 * @param string $orgId ID of the organisation to create the deal from. Returned as part of creating an organisation
 	 * @param string $phaseId ID of the phase to set the deal to. Returned from Phases()
 	 * @param string $name The name to set the deal up as
+	 * @param integer $value The value of the deal
+	 * @param string $bucketId The ID of the bucket this deal is contained in
+	 * @param string $expectedCloseDate The date the deal is expected to close
 	 *
 	 * @return array The created deal
 	 */
