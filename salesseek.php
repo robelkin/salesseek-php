@@ -164,6 +164,23 @@ class SalesSeek
 	}
 
 	/**
+	 * @param string $dealId
+	 * @return object The deal
+	 */
+
+	public function GetDeal($dealId = '')
+	{
+		if(!($dealId))
+		{
+			return false;
+		}
+
+		$response = $this->_doRequest($this->url.'/opportunities/'.$dealId, 'GET');
+
+		return json_decode($response);
+	}
+
+	/**
 	 * Change the phase a deal is in
 	 *
 	 * @param string $dealId The deal to update
